@@ -1,0 +1,50 @@
+name: Build x86 Image
+permissions: write-all
+on:
+  pull_request:
+    branches:
+    - main
+    paths-ignore:
+    - 'docs/**'
+    - '**.md'
+    
+  push:
+    branches:
+    - main
+    paths-ignore:
+    - 'docs/**'
+    - '**.md'
+
+jobs:
+  build-and-push-imag-router:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build  router bin
+        run: |
+          go mod tidy
+          git diff --exit-code
+          make build-router
+      - name: Build  router
+        run: |
+            go mod tidy
+            git diff --exit-code
+            make build-router
+            
+      - name: Login to Docker
+        run: |
+           docker login -u inspurwyd  -p  dckr_pat_yMRt21vCZj0PlDl14xJiqSOHeVg
+
+      - name: Push
+        run: |
+            cat VERSION
+            TAG=$(cat VERSION)
+            docker push inspurwyd/router:$TAG
+
+    
+
