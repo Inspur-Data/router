@@ -2,7 +2,7 @@ package bin
 
 import (
 	"fmt"
-	"github.com/Inspur-Data/router/api/v1/models"
+	"github.com/Inspur-Data/router/pkg/modules"
 	"github.com/Inspur-Data/router/pkg/config"
 	"github.com/Inspur-Data/router/pkg/logging"
 	"github.com/containernetworking/cni/pkg/skel"

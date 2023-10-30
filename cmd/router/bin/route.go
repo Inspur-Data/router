@@ -2,7 +2,7 @@ package bin
 
 import (
 	"encoding/json"
-	"github.com/Inspur-Data/router/api/v1/models"
+	"github.com/Inspur-Data/router/pkg/modules"
 	"github.com/Inspur-Data/router/pkg/logging"
 	"github.com/containernetworking/cni/pkg/version"
 	"github.com/vishvananda/netlink"

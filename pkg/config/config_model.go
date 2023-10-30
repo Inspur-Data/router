@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/Inspur-Data/router/api/v1/models"
+	"github.com/Inspur-Data/router/pkg/modules"
 	"github.com/containernetworking/cni/pkg/types"
 	"net"
 )
