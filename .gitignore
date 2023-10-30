@@ -1,0 +1,10 @@
+##ignore this file ##
+.idea
+go.sum
+/cmd/router/*.exe
+/cmd/router/router
+/cmd/router/test.go
+/cmd/router-ds/*.exe
+/cmd/router-ds/router-ds
+/cmd/controller/*.exe
+/cmd/controller/controller
